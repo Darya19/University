@@ -1,18 +1,19 @@
 package com.epam.university.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import java.util.Objects;
 
-@Table(name = "subjects")
 @Entity
 public class Subject {
 
     @Id
     @GeneratedValue
+    @Column(name = "SUBJECTID")
     private int subjectId;
+    @Column(name = "SUBJECTNAME")
     private String subjectName;
 
     public Subject() {

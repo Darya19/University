@@ -1,18 +1,19 @@
 package com.epam.university.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import java.util.Objects;
 
-@Table(name = "faculties")
 @Entity
 public class Faculty {
 
     @Id
     @GeneratedValue
+    @Column(name = "FACULTYID")
     private int facultyId;
+    @Column(name = "FACULTYNAME")
     private String facultyName;
 
     public Faculty() {

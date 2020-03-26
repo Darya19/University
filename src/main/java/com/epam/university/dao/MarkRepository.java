@@ -1,13 +1,13 @@
 package com.epam.university.dao;
 
 import com.epam.university.domain.Mark;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface MarkRepository extends JpaRepository<Mark, Integer> {
+public interface MarkRepository extends CrudRepository<Mark, Integer> {
 
     List<Mark> findAllByStudentId(int studentId);
 

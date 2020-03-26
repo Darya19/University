@@ -1,19 +1,21 @@
 package com.epam.university.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import java.util.Objects;
 
-@Table(name = "groups")
 @Entity
 public class Group {
 
     @Id
     @GeneratedValue
+    @Column(name = "GROUPID")
     private int groupId;
+    @Column(name = "GROUPNAME")
     private String groupName;
+    @Column(name = "FACULTYID")
     private int facultyId;
 
     public Group() {

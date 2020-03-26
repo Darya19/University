@@ -56,4 +56,21 @@ public class UniversityService {
 
         return Math.toIntExact(sum) / Math.toIntExact(count);
     }
+
+    public void save(int id, int groupId, String name, String lastName) {
+        Student s = new Student();
+        s.setStudentId(id);
+        s.setGroupId(groupId);
+        s.setFirstName(name);
+        s.setLastName(lastName);
+        studentRepository.save(s);
+    }
+
+    public Student getById(int id) {
+        return studentRepository.findById(id).get();
+    }
+
+    public Iterable<Student> findAll() {
+        return studentRepository.findAll();
+    }
 }

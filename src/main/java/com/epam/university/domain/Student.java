@@ -1,20 +1,26 @@
 package com.epam.university.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import java.util.Objects;
 
-@Table(name = "students")
 @Entity
 public class Student {
 
     @Id
     @GeneratedValue
+    @Column(name = "STUDENTID")
     private int studentId;
+
+    @Column(name = "GROUPID")
     private int groupId;
+
+    @Column(name = "LASTNAME")
     private String lastName;
+
+    @Column(name = "FIRSTNAME")
     private String firstName;
 
     public Student() {
@@ -24,8 +30,8 @@ public class Student {
         return studentId;
     }
 
-    public void setStudentId(int studentCode) {
-        this.studentId = studentCode;
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
     }
 
     public int getGroupId() {
