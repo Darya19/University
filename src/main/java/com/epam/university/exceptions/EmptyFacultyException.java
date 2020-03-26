@@ -1,6 +1,7 @@
-package Exceptions;
+package com.epam.university.exceptions;
 
-public class EmptyFacultyException extends Exception{
+public class EmptyFacultyException extends RuntimeException {
+
     public EmptyFacultyException() {
     }
 

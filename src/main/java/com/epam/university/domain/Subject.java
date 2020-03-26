@@ -1,15 +1,21 @@
-package domain;
+package com.epam.university.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.util.Objects;
+
+@Table(name = "subjects")
+@Entity
 public class Subject {
-    private  int subjectId;
+
+    @Id
+    @GeneratedValue
+    private int subjectId;
     private String subjectName;
 
     public Subject() {
-    }
-
-    public Subject(int subjectId, String subjectName) {
-        this.subjectId = subjectId;
-        this.subjectName = subjectName;
     }
 
     public int getSubjectId() {
@@ -36,7 +42,7 @@ public class Subject {
         Subject subject = (Subject) o;
 
         if (subjectId != subject.subjectId) return false;
-        return subjectName != null ? subjectName.equals(subject.subjectName) : subject.subjectName == null;
+        return Objects.equals(subjectName, subject.subjectName);
     }
 
     @Override

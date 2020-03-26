@@ -1,6 +1,7 @@
-package Exceptions;
+package com.epam.university.exceptions;
 
-public class EmptyGroupException extends Exception {
+public class EmptyGroupException extends RuntimeException {
+
     public EmptyGroupException() {
     }
 

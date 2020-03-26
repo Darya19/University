@@ -1,25 +1,28 @@
-package domain;
+package com.epam.university.domain;
 
+import javax.persistence.*;
+
+@Table(name = "marks")
+@Entity
 public class Mark {
-    private int studentCode;
+
+    @Id
+    @GeneratedValue
+    private int markId;
+    @Column
+    private int studentId;
+    @Column
     private int subjectId;
-    private int mark;
 
     public Mark() {
     }
 
-    public Mark(int studentCode, int subjectId, int mark) {
-        this.studentCode = studentCode;
-        this.subjectId = subjectId;
-        this.mark = mark;
+    public int getStudentId() {
+        return studentId;
     }
 
-    public int getStudentCode() {
-        return studentCode;
-    }
-
-    public void setStudentCode(int studentCode) {
-        this.studentCode = studentCode;
+    public void setStudentId(int studentCode) {
+        this.studentId = studentCode;
     }
 
     public int getSubjectId() {
@@ -30,12 +33,12 @@ public class Mark {
         this.subjectId = subjectId;
     }
 
-    public int getMark() {
-        return mark;
+    public int getMarkId() {
+        return markId;
     }
 
-    public void setMark(int mark) {
-        this.mark = mark;
+    public void setMarkId(int mark) {
+        this.markId = mark;
     }
 
     @Override
@@ -45,25 +48,25 @@ public class Mark {
 
         Mark mark1 = (Mark) o;
 
-        if (studentCode != mark1.studentCode) return false;
+        if (studentId != mark1.studentId) return false;
         if (subjectId != mark1.subjectId) return false;
-        return mark == mark1.mark;
+        return markId == mark1.markId;
     }
 
     @Override
     public int hashCode() {
-        int result = studentCode;
+        int result = studentId;
         result = 31 * result + subjectId;
-        result = 31 * result + mark;
+        result = 31 * result + markId;
         return result;
     }
 
     @Override
     public String toString() {
         return "Mark{" +
-                "studentCode=" + studentCode +
+                "studentCode=" + studentId +
                 ", subjectId=" + subjectId +
-                ", mark=" + mark +
+                ", mark=" + markId +
                 '}';
     }
 }

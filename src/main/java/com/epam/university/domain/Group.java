@@ -1,17 +1,22 @@
-package domain;
+package com.epam.university.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.util.Objects;
+
+@Table(name = "groups")
+@Entity
 public class Group {
+
+    @Id
+    @GeneratedValue
     private int groupId;
     private String groupName;
     private int facultyId;
 
     public Group() {
-    }
-
-    public Group(int groupId, String groupName, int facultyId) {
-        this.groupId = groupId;
-        this.groupName = groupName;
-        this.facultyId = facultyId;
     }
 
     public int getGroupId() {
@@ -47,7 +52,7 @@ public class Group {
 
         if (groupId != group.groupId) return false;
         if (facultyId != group.facultyId) return false;
-        return groupName != null ? groupName.equals(group.groupName) : group.groupName == null;
+        return Objects.equals(groupName, group.groupName);
     }
 
     @Override

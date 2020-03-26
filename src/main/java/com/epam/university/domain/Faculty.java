@@ -1,15 +1,21 @@
-package domain;
+package com.epam.university.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.util.Objects;
+
+@Table(name = "faculties")
+@Entity
 public class Faculty {
+
+    @Id
+    @GeneratedValue
     private int facultyId;
     private String facultyName;
 
     public Faculty() {
-    }
-
-    public Faculty(int facultyId, String facultyName) {
-        this.facultyId = facultyId;
-        this.facultyName = facultyName;
     }
 
     public int getFacultyId() {
@@ -36,7 +42,7 @@ public class Faculty {
         Faculty faculty = (Faculty) o;
 
         if (facultyId != faculty.facultyId) return false;
-        return facultyName != null ? facultyName.equals(faculty.facultyName) : faculty.facultyName == null;
+        return Objects.equals(facultyName, faculty.facultyName);
     }
 
     @Override

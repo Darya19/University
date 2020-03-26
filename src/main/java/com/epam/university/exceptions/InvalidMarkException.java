@@ -1,6 +1,7 @@
-package Exceptions;
+package com.epam.university.exceptions;
 
-public class InvalidMarkException extends Exception {
+public class InvalidMarkException extends RuntimeException {
+
     public InvalidMarkException() {
     }
 
