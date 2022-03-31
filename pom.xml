@@ -18,7 +18,7 @@
         <javax-servlet.version>4.0.1</javax-servlet.version>
         <testng.version>7.0.0</testng.version>
         <jackson.version>2.10.2</jackson.version>
-        <spring.version>2.2.5.RELEASE</spring.version>
+        <spring.version>2.5.12</spring.version>
         <h2.version>1.4.200</h2.version>
     </properties>
 
